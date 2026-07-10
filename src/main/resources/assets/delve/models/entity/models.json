@@ -1,10 +1,14 @@
 {
   "model_paths": [
-    "/assets/delve/models/entity/miner/miner.geo.json"
+    "/assets/delve/models/entity/miner/miner.geo.json",
+    "/assets/delve/models/entity/mobspawner/mobspawner.geo.json"
   ],
   "renderers": {
     "delve:miner": {
       "main":"geometry.miner"
+    },
+    "delve:mobspawner": {
+      "main":"geometry.mobspawner"
     }
   }
 }

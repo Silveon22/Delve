@@ -1,0 +1,83 @@
+{
+	"format_version": "1.10.0",
+	"geometry.mobspawner": {
+		"texturewidth": 64,
+		"textureheight": 64,
+		"visible_bounds_width": 2,
+		"visible_bounds_height": 4,
+		"visible_bounds_offset": [0, 2, 0],
+		"bones": [
+			{
+				"name": "waist",
+				"pivot": [0, 18, 0]
+			},
+			{
+				"name": "torso",
+				"parent": "waist",
+				"pivot": [0, 34, 0]
+			},
+			{
+				"name": "body",
+				"parent": "torso",
+				"pivot": [0, 34, 0],
+				"cubes": [
+					{"origin": [-5, 22, -3], "size": [10, 12, 6], "uv": [32, 46]}
+				]
+			},
+			{
+				"name": "rightArm",
+				"parent": "torso",
+				"pivot": [-5, 32, 0],
+				"cubes": [
+					{"origin": [-7, 12, -1], "size": [2, 22, 2], "uv": [0, 40]}
+				]
+			},
+			{
+				"name": "rightItem",
+				"parent": "rightArm",
+				"pivot": [-6, 22, -2],
+				"rotation": [90, 0, 0]
+			},
+			{
+				"name": "leftArm",
+				"parent": "torso",
+				"pivot": [5, 32, 0],
+				"mirror": true,
+				"cubes": [
+					{"origin": [5, 12, -1], "size": [2, 22, 2], "uv": [0, 40]}
+				]
+			},
+			{
+				"name": "leftItem",
+				"parent": "leftArm",
+				"pivot": [6, 22, -2],
+				"rotation": [-90, 180, 0]
+			},
+			{
+				"name": "head",
+				"parent": "waist",
+				"pivot": [0, 34, 0],
+				"cubes": [
+					{"origin": [-6, 34, -6], "size": [12, 12, 12], "uv": [0, 0]}
+				]
+			},
+			{
+				"name": "rightLeg",
+				"parent": "waist",
+				"pivot": [-1.9, 22, 0],
+				"cubes": [
+					{"origin": [-2.9, 0, -1], "size": [2, 22, 2], "uv": [0, 40]}
+				]
+			},
+			{
+				"name": "leftLeg",
+				"parent": "waist",
+				"pivot": [1.9, 22, 0],
+				"mirror": true,
+				"cubes": [
+					{"origin": [0.9, 0, -1], "size": [2, 22, 2], "uv": [0, 40]}
+				]
+			}
+		]
+	}
+}

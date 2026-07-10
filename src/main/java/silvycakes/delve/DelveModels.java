@@ -16,6 +16,8 @@ import net.minecraft.client.render.item.model.ItemModelDispatcher;
 import silvycakes.delve.block.DelveBlocks;
 import silvycakes.delve.entity.miner.MobMiner;
 import silvycakes.delve.entity.miner.MobRendererMiner;
+import silvycakes.delve.entity.mobspawner.MobMobspawner;
+import silvycakes.delve.entity.mobspawner.MobRendererMobspawner;
 import turniplabs.halplibe.helper.ModelHelper;
 import turniplabs.halplibe.util.ModelEntrypoint;
 
@@ -36,6 +38,7 @@ public class DelveModels implements ModelEntrypoint {
 	@Override
 	public void initEntityModels(EntityRendererDispatcher dispatcher) {
 		ModelHelper.setEntityModel(MobMiner.class, new MobRendererMiner(0.5F));
+		ModelHelper.setEntityModel(MobMobspawner.class, new MobRendererMobspawner(0.5F));
 	}
 
 	@Override

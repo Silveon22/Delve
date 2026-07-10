@@ -6,6 +6,8 @@ import net.minecraft.core.block.Blocks;
 import net.minecraft.core.block.material.Material;
 import net.minecraft.core.block.material.MaterialLiquid;
 import net.minecraft.core.entity.Entity;
+import net.minecraft.core.entity.IArmorWearing;
+import net.minecraft.core.entity.IItemHolding;
 import net.minecraft.core.entity.monster.MobMonster;
 import net.minecraft.core.entity.monster.MobSkeleton;
 import net.minecraft.core.item.ItemStack;
@@ -19,9 +21,12 @@ import net.minecraft.core.world.pos.TilePosc;
 import net.minecraft.core.world.season.Seasons;
 import net.minecraft.core.world.weather.Weathers;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+import org.spongepowered.asm.mixin.Implements;
 import silvycakes.delve.block.DelveBlocks;
 
-public class MobMiner extends MobMonster {
+public class MobMiner extends MobMonster implements IItemHolding {
+	private static final ItemStack DEFAULT_HELD_ITEM;
 	public MobMiner(@NotNull World world) {
 		super(world);
 		this.setTextureIdentifier("delve", "miner");
@@ -31,7 +36,6 @@ public class MobMiner extends MobMonster {
 		this.bbHeight = 2.2F;
 		this.mobDrops.add(new WeightedRandomLootObject(Items.CLOTH.getDefaultStack(), 0, 2));
 	}
-
 
 	public void tick() {
 		super.tick();
@@ -62,9 +66,9 @@ public class MobMiner extends MobMonster {
 
 	public void buildBlock() {
 		TilePos block = new TilePos();
-		block.x = (int) (this.x - 1F);
-		block.y = (int) (this.y - 0.75F);
-		block.z = (int) (this.z - 1F);
+		block.x = (int) MathHelper.floor (this.x);
+		block.y = (int) MathHelper.floor (this.y - 1F);
+		block.z = (int) MathHelper.floor (this.z);
 		if (block.inBounds(this.world) && this.world.getBlockType(block) == Blocks.AIR) {
 			this.world.setBlockTypeNotify(block, DelveBlocks.PETRIFIED_PLANKS);
 		}
@@ -97,5 +101,24 @@ public class MobMiner extends MobMonster {
 				return false;
 			}
 		}
+	}
+
+	static {
+		DEFAULT_HELD_ITEM = new ItemStack(Items.TOOL_PICKAXE_IRON, 1);
+	}
+
+	@Override
+	public @Nullable ItemStack getHeldItem() {
+		return DEFAULT_HELD_ITEM;
+	}
+
+	@Override
+	public void setHeldItem(@Nullable ItemStack itemStack) {
+
+	}
+
+	@Override
+	public boolean isLeftHanded() {
+		return false;
 	}
 }

@@ -4,6 +4,7 @@ package silvycakes.delve.entity;
 import net.minecraft.core.entity.EntityDispatcher;
 import net.minecraft.core.util.collection.NamespaceID;
 import silvycakes.delve.entity.miner.MobMiner;
+import silvycakes.delve.entity.mobspawner.MobMobspawner;
 
 import static silvycakes.delve.Delve.MOD_ID;
 
@@ -26,6 +27,12 @@ public final class DelveEntities {
 			NamespaceID.fromPool(MOD_ID, "miner"),
 			MobMiner::new,
 			"guidebook.section.mob.delve.miner.name"
+		);
+		dispatcher.addMapping(
+			MobMobspawner.class,
+			NamespaceID.fromPool(MOD_ID, "mobspawner"),
+			MobMobspawner::new,
+			"guidebook.section.mob.delve.mobspawner.name"
 		);
 	}
 }
