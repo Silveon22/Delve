@@ -1,0 +1,10 @@
+{
+  "model_paths": [
+    "/assets/delve/models/entity/miner/miner.geo.json"
+  ],
+  "renderers": {
+    "delve:miner": {
+      "main":"geometry.miner"
+    }
+  }
+}

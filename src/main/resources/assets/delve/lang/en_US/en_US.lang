@@ -1,0 +1,9 @@
+
+tile.delve.boulder.name = Boulder
+tile.delve.boulder.desc = A large rock.
+tile.delve.petrified.planks.name = Crumbling Planks
+tile.delve.petrified.planks.desc = Old wooden planks that are about to fall apart.
+
+
+guidebook.section.mob.miner.name=Miner Zombie
+guidebook.section.mob.miner.desc=Miner zombies are capable of building temporary structures to get to you. Typically found underground in darkness, but can rarely be found on the surface as well.
